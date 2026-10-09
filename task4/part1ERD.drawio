@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Musicana ERD" id="musicana">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Entities -->
+        <mxCell id="e1" value="Musician" style="whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="400" y="300" width="120" height="60" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Instrument" style="whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="40" y="300" width="120" height="60" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Album" style="whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="760" y="300" width="120" height="60" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Song" style="whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="400" y="600" width="120" height="60" as="geometry"/></mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="r1" value="Plays" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="220" y="295" width="120" height="70" as="geometry"/></mxCell>
+        <mxCell id="r2" value="Performs" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="400" y="450" width="120" height="70" as="geometry"/></mxCell>
+        <mxCell id="r3" value="Produces" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="580" y="295" width="120" height="70" as="geometry"/></mxCell>
+        <mxCell id="r4" value="Contains" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="600" y="450" width="120" height="70" as="geometry"/></mxCell>
+
+        <!-- Relationship edges with cardinality -->
+        <mxCell id="c1" value="M" style="endArrow=none;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e2" target="r1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c2" value="N" style="endArrow=none;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="r1" target="e1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c3" value="M" style="endArrow=none;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e1" target="r2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c4" value="N" style="endArrow=none;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="r2" target="e4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c5" value="1" style="endArrow=none;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e1" target="r3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c6" value="N" style="shape=link;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="r3" target="e3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c7" value="1" style="endArrow=none;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e3" target="r4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c8" value="N" style="endArrow=none;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="r4" target="e4"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Musician attributes -->
+        <mxCell id="a1" value="MusicianID" style="ellipse;whiteSpace=wrap;html=1;fontStyle=4;" vertex="1" parent="1"><mxGeometry x="130" y="170" width="110" height="40" as="geometry"/></mxCell>
+        <mxCell id="a2" value="Name" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="260" y="170" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="a3" value="Phone" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="360" y="170" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="a4" value="Address" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="460" y="170" width="100" height="40" as="geometry"/></mxCell>
+        <mxCell id="a5" value="Street" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="440" y="70" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="a6" value="City" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="560" y="70" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="l1" style="endArrow=none;html=1;" edge="1" parent="1" source="a1" target="e1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l2" style="endArrow=none;html=1;" edge="1" parent="1" source="a2" target="e1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l3" style="endArrow=none;html=1;" edge="1" parent="1" source="a3" target="e1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l4" style="endArrow=none;html=1;" edge="1" parent="1" source="a4" target="e1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l5" style="endArrow=none;html=1;" edge="1" parent="1" source="a5" target="a4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l6" style="endArrow=none;html=1;" edge="1" parent="1" source="a6" target="a4"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Instrument attributes -->
+        <mxCell id="a7" value="InstrumentName" style="ellipse;whiteSpace=wrap;html=1;fontStyle=4;" vertex="1" parent="1"><mxGeometry x="10" y="430" width="120" height="40" as="geometry"/></mxCell>
+        <mxCell id="a8" value="MusicalKey" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="150" y="430" width="100" height="40" as="geometry"/></mxCell>
+        <mxCell id="l7" style="endArrow=none;html=1;" edge="1" parent="1" source="a7" target="e2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l8" style="endArrow=none;html=1;" edge="1" parent="1" source="a8" target="e2"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Album attributes -->
+        <mxCell id="a9" value="AlbumID" style="ellipse;whiteSpace=wrap;html=1;fontStyle=4;" vertex="1" parent="1"><mxGeometry x="720" y="170" width="90" height="40" as="geometry"/></mxCell>
+        <mxCell id="a10" value="Title" style="ellipse;whiteSpace=wrap;html=1;fontStyle=4;" vertex="1" parent="1"><mxGeometry x="830" y="170" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="a11" value="CopyrightDate" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="900" y="380" width="120" height="40" as="geometry"/></mxCell>
+        <mxCell id="l9" style="endArrow=none;html=1;" edge="1" parent="1" source="a9" target="e3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l10" style="endArrow=none;html=1;" edge="1" parent="1" source="a10" target="e3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l11" style="endArrow=none;html=1;" edge="1" parent="1" source="a11" target="e3"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Song attributes -->
+        <mxCell id="a12" value="Title" style="ellipse;whiteSpace=wrap;html=1;fontStyle=4;" vertex="1" parent="1"><mxGeometry x="360" y="730" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="a13" value="Author" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="470" y="730" width="80" height="40" as="geometry"/></mxCell>
+        <mxCell id="l12" style="endArrow=none;html=1;" edge="1" parent="1" source="a12" target="e4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="l13" style="endArrow=none;html=1;" edge="1" parent="1" source="a13" target="e4"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
